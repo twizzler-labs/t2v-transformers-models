@@ -1,6 +1,8 @@
-FROM python:3.9-slim-buster
+FROM anibali/pytorch:1.10.2-cuda11.3-ubuntu20.04
 
 WORKDIR /app
+
+USER root
 
 RUN apt-get update && apt-get -y install curl build-essential
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
